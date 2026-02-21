@@ -66,7 +66,7 @@ The plan must be self-contained and deterministic.
 If the file exists, overwrite it completely.
 
 ### Consumes (optional)
-- `docs/as-is.md` (from as-is-discovery)
+- `docs/as-is/as-is-YYYY-MM-DD.md` (from as-is-discovery)
 - existing ADRs / architecture docs / product requirements
 - any prior design docs
 
@@ -144,7 +144,7 @@ steps:
     skill: as-is-discovery
     optional: true
     depends_on: []
-    produces: docs/as-is.md
+    produces: docs/as-is/as-is-YYYY-MM-DD.md
   - id: domain
     skill: domain-design
     optional: false
@@ -195,7 +195,7 @@ For each step, define:
 
 ### 5.1 as-is-discovery
 - Inputs:
-- Produces: docs/as-is.md 
+- Produces: docs/as-is/as-is-YYYY-MM-DD.md 
 - DoD:
   - [ ] Static/Behavior/Constraints included 
   - [ ] Facts/Inferences labeled + confidence 
@@ -219,7 +219,7 @@ List questions required to proceed, prioritized:
 
 ## 7. Output Artifacts (Final set)
 - docs/design/<design_id>/design-plan.md (this file)
-- docs/as-is.md (if executed)
+- docs/as-is/as-is-YYYY-MM-DD.md (if executed)
 - docs/design/<design_id>/domain-design.md 
 - docs/design/<design_id>/db-design.md 
 - docs/app-design.md (optional)
@@ -233,14 +233,18 @@ List questions required to proceed, prioritized:
 ```json
 {
   "design_id": "DP-20260221-feat-president-listing",
+  "artifact": "design-orchestrator",
+  "source_refs": {
+    "as_is": "docs/as-is/as-is-YYYY-MM-DD.md"
+  },
   "goal": "",
   "mode": "feature-level",
   "selected_skills": [
-    { "skill": "as-is-discovery", "required": true, "produces": "docs/as-is.md" }
+    { "skill": "as-is-discovery", "required": true, "produces": "docs/as-is/as-is-YYYY-MM-DD.md" }
   ],
   "dag": {
     "steps": [
-      { "id": "as_is", "skill": "as-is-discovery", "depends_on": [], "produces": "docs/as-is.md" }
+      { "id": "as_is", "skill": "as-is-discovery", "depends_on": [], "produces": "docs/as-is/as-is-YYYY-MM-DD.md" }
     ]
   },
   "questions": [
@@ -248,7 +252,7 @@ List questions required to proceed, prioritized:
   ],
   "final_artifacts": [
     "docs/design/<design_id>/design-plan.md",
-    "docs/as-is.md"
+    "docs/as-is/as-is-YYYY-MM-DD.md"
   ]
 }
 ```

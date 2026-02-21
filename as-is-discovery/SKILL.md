@@ -170,6 +170,11 @@ List observed smells without suggesting fixes.
 ## 6. Structured Summary (Machine-readable JSON) (must include)
 ```json
 {
+  "design_id": "NA",
+  "artifact": "as-is-discovery",
+  "source_refs": {
+    "as_is": "docs/as-is/as-is-YYYY-MM-DD.md"
+  },
   "mode": "service-level",
   "scope": {
     "in_scope": [],

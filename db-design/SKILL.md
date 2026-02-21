@@ -43,7 +43,7 @@ Overwrite completely if exists.
 
 ### Consumes (optional)
 - `docs/design/<design_id>/domain-design.md`
-- `docs/as-is.md` (for migration/compat constraints)
+- `docs/as-is/as-is-YYYY-MM-DD.md` (for migration/compat constraints)
 
 ## Design defaults (apply unless user overrides)
 - PostgreSQL
@@ -174,6 +174,13 @@ Map each index to the access patterns it supports:
 ## 9. Structured Summary (Machine-readable JSON)
 ```json
 {
+  "design_id": "DP-YYYYMMDD-<scope>-<slug>",
+  "artifact": "db-design",
+  "source_refs": {
+    "as_is": "docs/as-is/as-is-YYYY-MM-DD.md",
+    "design_plan": "docs/design/<design_id>/design-plan.md",
+    "domain_design": "docs/design/<design_id>/domain-design.md"
+  },
   "goal": "",
   "assumptions": [
     { "text": "", "reason": "", "confidence": "low|medium|high" }

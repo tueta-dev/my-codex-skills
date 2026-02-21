@@ -35,7 +35,7 @@ Trigger when the user asks to:
 - Product/feature goal, target users
 - Main user journeys / use-cases
 - Key business rules and constraints (even partial)
-- Existing as-is info (optional): `docs/as-is.md`
+- Existing as-is info (optional): `docs/as-is/as-is-YYYY-MM-DD.md`
   If missing, proceed with best-effort and list Open Questions.
 
 ## Artifact policy (1 Skill = 1 Artifact)
@@ -46,7 +46,7 @@ The file must be deterministic and self-contained.
 If the file exists, overwrite it completely.
 
 ### Consumes (optional)
-- `docs/as-is.md`
+- `docs/as-is/as-is-YYYY-MM-DD.md`
 - requirement docs / PRDs / tickets
 - existing glossary / business docs
 
@@ -161,6 +161,12 @@ List assumptions explicitly:
 ## 10. Structured Summary (Machine-readable JSON)
 ```json
 {
+  "design_id": "DP-YYYYMMDD-<scope>-<slug>",
+  "artifact": "domain-design",
+  "source_refs": {
+    "as_is": "docs/as-is/as-is-YYYY-MM-DD.md",
+    "design_plan": "docs/design/<design_id>/design-plan.md"
+  },
   "goal": "",
   "contexts": [
     {

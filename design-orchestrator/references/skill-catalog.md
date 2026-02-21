@@ -1,6 +1,6 @@
 # Skill Catalog (Design)
 
-- as-is-discovery -> docs/as-is.md
+- as-is-discovery -> docs/as-is/as-is-YYYY-MM-DD.md
 - domain-design -> docs/domain-design.md
 - db-design -> docs/db-design.md
 - app-design -> docs/app-design.md

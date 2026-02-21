@@ -1,6 +1,6 @@
 ---
 name: design-review
-description: Use when asked to review and validate multi-layer design artifacts. Read docs/as-is.md, docs/design/<design_id>/domain-design.md, docs/design/<design_id>/db-design.md, and any other design docs, then produce a structured review highlighting inconsistencies, missing requirements, risks, and prioritized fixes. Do not create new design solutions; focus on review findings and actionable remediation tasks.
+description: Use when asked to review and validate multi-layer design artifacts. Read docs/as-is/as-is-YYYY-MM-DD.md, docs/design/<design_id>/domain-design.md, docs/design/<design_id>/db-design.md, and any other design docs, then produce a structured review highlighting inconsistencies, missing requirements, risks, and prioritized fixes. Do not create new design solutions; focus on review findings and actionable remediation tasks.
 ---
 
 # Design Review (Cross-layer Consistency)
@@ -31,7 +31,7 @@ Trigger when the user asks to:
 
 ## Inputs (consume what exists)
 Preferred inputs (if present):
-- `docs/as-is.md`
+- `docs/as-is/as-is-YYYY-MM-DD.md`
 - `docs/design/<design_id>/domain-design.md`
 - `docs/design/<design_id>/db-design.md`
   Optional:
@@ -81,7 +81,7 @@ Overwrite completely if exists.
 ## 1. Review Scope
 - Goal under review:
 - Artifacts found:
-    - [ ] docs/as-is.md
+    - [ ] docs/as-is/as-is-YYYY-MM-DD.md
     - [ ] docs/design/<design_id>/domain-design.md
     - [ ] docs/design/<design_id>/db-design.md
     - [ ] docs/app-design.md
@@ -165,6 +165,18 @@ List concrete updates needed per artifact:
 ## 7. Structured Summary (Machine-readable JSON)
 ```json
 {
+  "design_id": "DP-YYYYMMDD-<scope>-<slug>",
+  "artifact": "design-review",
+  "source_refs": {
+    "as_is": "docs/as-is/as-is-YYYY-MM-DD.md",
+    "design_plan": "docs/design/<design_id>/design-plan.md",
+    "domain_design": "docs/design/<design_id>/domain-design.md",
+    "db_design": "docs/design/<design_id>/db-design.md",
+    "app_design": "docs/app-design.md",
+    "ui_design": "docs/ui-design.md",
+    "architecture_design": "docs/architecture-design.md",
+    "security_design": "docs/security-design.md"
+  },
   "overall_readiness": "ready|needs-work|blocked",
   "artifacts": {
     "as_is": false,
