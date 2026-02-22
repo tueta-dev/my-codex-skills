@@ -1,0 +1,10 @@
+####
+# Agent
+####
+[agents.repo_explorer]
+description = "Performs As-Is analysis. Read-only."
+config_file = "agents/repo_explorer.toml"
+
+[agents.review_orchestrator]
+description = "Orchestrates multi-agent PR review"
+config_file = "agents/review_orchestrator.toml"

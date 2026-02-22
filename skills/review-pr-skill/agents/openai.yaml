@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Review"
+  short_description: "Review branch vs main and report actionable findings"
+  default_prompt: "Use $review-pr-skill to review this branch against main and output severity-ranked findings."
